@@ -20,6 +20,14 @@ A blazing-fast, beautifully designed election education chatbot specialized for 
 
 ## 🚀 Getting Started
 
+
+
+
+https://github.com/user-attachments/assets/3954ba97-1289-48bb-9b1d-e7bc8f816e61
+
+
+
+
 ### Option 1 — Open Locally (instant, no server needed)
 ```
 1. Unzip matabot-india.zip
