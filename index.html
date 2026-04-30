@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MataBot — भारत निर्वाचन सहायक | India Election Assistant</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Yatra+One&family=Tiro+Devanagari+Hindi:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- Animated Background -->
+<div class="bg-mandala" id="mandala"></div>
+<div class="ashok-stripe top-stripe"></div>
+<div class="ashok-stripe bottom-stripe"></div>
+
+<div class="app">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="logo-wrap">
+      <div class="logo">
+        <span class="logo-wheel">☸</span>
+      </div>
+      <div class="logo-flag">
+        <div class="flag-saffron"></div>
+        <div class="flag-white"><span class="flag-chakra">☸</span></div>
+        <div class="flag-green"></div>
+      </div>
+    </div>
+    <div class="header-text">
+      <h1>Mata<span>Bot</span></h1>
+      <p>भारत निर्वाचन सहायक · INDIA ELECTION GUIDE · By AI</p>
+    </div>
+    <div class="header-right">
+      <div class="eci-badge">
+        <span class="eci-dot"></span>
+        ECI Ready
+      </div>
+      <button class="clear-btn" onclick="clearChat()">↺ नया</button>
+    </div>
+  </div>
+
+  <!-- Quick Chips -->
+  <div class="chips-row">
+    <button class="chip" onclick="askChip('How does voting work in India? Explain the complete process.')">🗺️ How voting works</button>
+    <button class="chip" onclick="askChip('What is the Lok Sabha election process and timeline?')">🏛️ Lok Sabha</button>
+    <button class="chip" onclick="askChip('How do I register as a voter in India? What documents do I need?')">📋 Voter registration</button>
+    <button class="chip" onclick="askChip('What is the role of the Election Commission of India?')">⚖️ ECI role</button>
+    <button class="chip" onclick="askChip('How does the EVM (Electronic Voting Machine) work in India?')">🖥️ EVM explained</button>
+    <button class="chip" onclick="askChip('What are the different types of elections held in India?')">🌐 Types of elections</button>
+    <button class="chip" onclick="askChip('How does the Model Code of Conduct work in India?')">📜 Model Code</button>
+    <button class="chip" onclick="askChip('How is the President of India elected?')">👑 Presidential election</button>
+  </div>
+
+  <!-- Chat Area -->
+  <div class="chat" id="chatArea">
+    <div class="welcome" id="welcomeScreen">
+      <div class="welcome-header">
+        <div class="tricolor-bar">
+          <div></div><div></div><div></div>
+        </div>
+        <span class="welcome-icon">🗳️</span>
+        <h2>जय हिन्द! Welcome to MataBot</h2>
+        <p>Your complete guide to India's democratic election system — from voter registration to results. Ask in English or Hindi!</p>
+        <div class="tricolor-bar">
+          <div></div><div></div><div></div>
+        </div>
+      </div>
+      <div class="welcome-cards">
+        <div class="welcome-card" onclick="askChip('Explain how the Lok Sabha general elections work from start to finish')">
+          <span class="wc-icon">🏛️</span>
+          <div class="wc-title">Lok Sabha Elections</div>
+          <div class="wc-sub">General election process</div>
+        </div>
+        <div class="welcome-card" onclick="askChip('Walk me through the complete Indian election timeline with all milestones')">
+          <span class="wc-icon">📅</span>
+          <div class="wc-title">Election Timeline</div>
+          <div class="wc-sub">Schedule & key dates</div>
+        </div>
+        <div class="welcome-card" onclick="askChip('How does voter registration work in India? How to apply for a Voter ID card?')">
+          <span class="wc-icon">🪪</span>
+          <div class="wc-title">Voter ID Card</div>
+          <div class="wc-sub">EPIC & registration</div>
+        </div>
+        <div class="welcome-card" onclick="askChip('How does the EVM and VVPAT system work in Indian elections?')">
+          <span class="wc-icon">🖥️</span>
+          <div class="wc-title">EVM & VVPAT</div>
+          <div class="wc-sub">Voting technology</div>
+        </div>
+        <div class="welcome-card" onclick="askChip('What is the role and power of the Election Commission of India?')">
+          <span class="wc-icon">⚖️</span>
+          <div class="wc-title">Election Commission</div>
+          <div class="wc-sub">ECI powers & duties</div>
+        </div>
+        <div class="welcome-card" onclick="askChip('How can I become a candidate and contest elections in India?')">
+          <span class="wc-icon">🎙️</span>
+          <div class="wc-title">Contest Elections</div>
+          <div class="wc-sub">Candidacy & nomination</div>
+        </div>
+        <div class="welcome-card" onclick="askChip('What is the Model Code of Conduct in Indian elections and what are its rules?')">
+          <span class="wc-icon">📜</span>
+          <div class="wc-title">Model Code of Conduct</div>
+          <div class="wc-sub">Rules during elections</div>
+        </div>
+        <div class="welcome-card" onclick="askChip('How are Rajya Sabha members elected? Who votes for them?')">
+          <span class="wc-icon">🏟️</span>
+          <div class="wc-title">Rajya Sabha</div>
+          <div class="wc-sub">Upper house elections</div>
+        </div>
+        <div class="welcome-card" onclick="askChip('How are votes counted in Indian elections and how is the winner decided?')">
+          <span class="wc-icon">🔢</span>
+          <div class="wc-title">Vote Counting</div>
+          <div class="wc-sub">Counting & results</div>
+        </div>
+        <div class="welcome-card" onclick="askChip('What is NOTA and how does it work in Indian elections?')">
+          <span class="wc-icon">✋</span>
+          <div class="wc-title">NOTA Option</div>
+          <div class="wc-sub">None of the above</div>
+        </div>
+        <div class="welcome-card" onclick="askChip('How does election funding and campaign finance work in India?')">
+          <span class="wc-icon">💰</span>
+          <div class="wc-title">Campaign Finance</div>
+          <div class="wc-sub">Spending limits & funds</div>
+        </div>
+        <div class="welcome-card" onclick="askChip('What are the voting rights of Indian citizens? Who is eligible to vote?')">
+          <span class="wc-icon">🌿</span>
+          <div class="wc-title">Voting Rights</div>
+          <div class="wc-sub">Eligibility & rights</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Input Area -->
+  <div class="input-area">
+    <div class="input-box" id="inputBox">
+      <textarea id="userInput" placeholder="Ask about Indian elections... (English या हिंदी में पूछें)" rows="1"></textarea>
+      <button class="send-btn" id="sendBtn" onclick="sendMessage()">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M22 2L11 13" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M22 2L15 22L11 13L2 9L22 2Z" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+    </div>
+    <div class="input-footer">
+      <span class="footer-tag">⚡</span>
+      <span class="footer-tag india-tag">🇮🇳 ECI</span>
+      MataBot · AI BOT · Press <kbd>Enter</kbd> to send
+    </div>
+  </div>
+
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
