@@ -10,7 +10,7 @@
    Configuration
    ============================ */
 const CONFIG = {
-  apiKey:      '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',
+  apiKey:      'gsk______________________________________________m0ITl',
   apiUrl:      'https://api.groq.com/openai/v1/chat/completions',
   model:       'llama-3.3-70b-versatile',
   maxTokens:   1300,
