@@ -60,7 +60,7 @@ matabot-india/
 Pre-configured in `app.js` line 13:
 ```js
 const CONFIG = {
-  apiKey: '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',
+  apiKey: 'gsk___________________________nm0ITl',
   model:  'llama-3.3-70b-versatile',
   ...
 };
